@@ -2,7 +2,7 @@ from .parser import *
 import click
 import logging
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.DEBUG)
 
 def check_pcap_file_type(ctx, param, value):
     return value
