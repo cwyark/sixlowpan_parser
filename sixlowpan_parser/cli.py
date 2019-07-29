@@ -2,7 +2,7 @@ from .parser import *
 import click
 import logging
 
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 
 def check_pcap_file_type(ctx, param, value):
     return value
@@ -21,4 +21,4 @@ def parse(pcap_file, output):
     logging.info("input file is {}".format(pcap_file))
     logging.info("output file is {}".format(output))
     parser = PCAPParser(pcap_file, output)
-    parser.run(collect_callback = None)
+    parser.run()

@@ -71,4 +71,4 @@ class PCAPParser:
 
         if collect_callback is not None:
             self.logger.info("Finising parsing packets. Calculating packets..")
-            collect_callback(self.paself.output)
+            collect_callback(self.packet_info_list, self.output)
