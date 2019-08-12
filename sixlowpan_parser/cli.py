@@ -1,4 +1,4 @@
-from .parser import *
+from .runner import *
 import click
 import logging
 
@@ -15,10 +15,10 @@ def main():
     return True
 
 @main.command()
-@click.option('-f', '--pcap-file', callback=check_pcap_file_type, required=True, type=str)
+@click.option('-i', '--data-input', callback=check_pcap_file_type, required=True, type=str)
 @click.option('-o', '--output',type=str, required=True)
-def parse(pcap_file, output):
-    logging.info("input file is {}".format(pcap_file))
+def parse(data_input, output):
+    logging.info("data input is {}".format(data_input))
     logging.info("output file is {}".format(output))
-    parser = PCAPParser(pcap_file, output)
-    parser.run()
+    runner = Runner(data_input, output)
+    runner.run()
