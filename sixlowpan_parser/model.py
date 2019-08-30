@@ -374,6 +374,7 @@ class AggregationModel:
         self.updateHumidity(udp_model.Humidity)
         self.updatePowerLevel(udp_model.battery_voltage)
         self.updateConsumedPower(udp_model.CPUPower)
+        self.updateRemainingPower(udp_model.LPMPower)
 
     @property
     def to_dict(self):
@@ -389,7 +390,8 @@ class AggregationModel:
                 Humidity = self.Humidity,
                 PowerLevel = self.PowerLevel,
                 ConsumedPower = self.ConsumedPower,
-                RemainingPower = self.RemainingPower
+                RemainingPower = self.RemainingPower,
+                NumOfNabors = self.NumOfNabors
                 )
 
     def reset(self):
